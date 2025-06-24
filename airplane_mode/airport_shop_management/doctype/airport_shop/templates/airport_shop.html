@@ -1,0 +1,27 @@
+{% block css %}
+    <link rel="stylesheet" href="/assets/airplane_mode/css/shop.css">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>    
+{% endblock css %}
+
+{% block page_content %}
+
+  <h1>{{ doc.shop_name }}</h1>
+  <p><strong>Airport:</strong> {{ doc.airport }}</p>
+  <p><strong>Status:</strong> {{ doc.status }}</p>
+  <p><strong>Area:</strong> {{ doc.shop_size }} sq ft</p>
+  <p><strong>Monthly Rent:</strong> ₹{{ doc.monthly_rent }}</p>
+
+
+  {% if doc.status == 'Available' %}
+  <p><strong>Status:</strong> {{ doc.status }}</p>
+  {% endif %}
+  <p>
+    <a class="button button-success" href="/shop-lead/new">Interested? Get in touch</a>
+  </p>
+
+{% endblock %}

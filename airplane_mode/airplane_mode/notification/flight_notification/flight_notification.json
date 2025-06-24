@@ -1,0 +1,32 @@
+{
+ "attach_print": 0,
+ "channel": "System Notification",
+ "condition": "doc.status==\"Scheduled\"",
+ "creation": "2025-06-06 14:22:26.895399",
+ "date_changed": "date_of_departure",
+ "days_in_advance": 1,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Airplane Flight",
+ "enabled": 1,
+ "event": "Days Before",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Hey,\n\nFlight is scheduled in 1 hour\n\n<a href=\"http://locahost:8001/app\">Click to view more</a>",
+ "message_type": "Markdown",
+ "minutes_offset": 0,
+ "modified": "2025-06-06 14:57:05.708999",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Flight Notification",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": "",
+   "receiver_by_role": "System Manager"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "Departs in. 24 hours!"
+}

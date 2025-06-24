@@ -1,0 +1,13 @@
+<div>
+	<a href="/{{ doc.route |e }}">
+		<h5>
+			{{ (doc.title or doc.name) |e }}
+		</h5>
+	</a>
+	<span>
+		{{ doc.airport |e }}
+	</span>
+	
+	<p class="text-muted">{{ doc.shop_size }} sq ft. - Rs. {{ doc.monthly_rent }}</p>
+</div>
+<!-- this is a sample default list template -->

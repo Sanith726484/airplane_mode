@@ -1,0 +1,17 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<h1>{{ title |e }}</h1>
+
+    {% if doc.website %}
+        <p>
+            Visit official website:
+            <a href="{{ doc.website }}" target="_blank">{{ doc.website }}</a>
+        </p>
+    {% else %}
+        <p>This airline has no website listed.</p>
+    {% endif %}
+
+{% endblock %}
+
+<!-- this is a sample default web page template -->
