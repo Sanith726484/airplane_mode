@@ -39,6 +39,7 @@ class AirplaneTicket(WebsiteGenerator):
 	def set_total_amount(self):
 		flight_price = self.flight_price or 0
 		total_add_ons = sum((row.amount or 0) for row in self.add_ons)
+		print(f"Flight Price: {flight_price}, Total Add-Ons: {total_add_ons}")
 		self.total_amount = flight_price + total_add_ons
 
 	def check_flight_capacity(self):

@@ -245,3 +245,14 @@ scheduler_events = {
         "airplane_mode.rent.send_rent_reminders"
     ]
 }
+
+website_user_home_page = "airplane_mode.www.user_dashboard"
+
+portal_menu_items = [
+    {
+        "title": "My Orders",
+        "route": "/my-orders",
+        "reference_doctype": "Sales Order",
+        "role": "Customer"
+    }
+]
