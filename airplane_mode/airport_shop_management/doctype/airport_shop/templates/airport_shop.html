@@ -7,21 +7,27 @@
         }
     </style>    
 {% endblock css %}
-
 {% block page_content %}
 
   <h1>{{ doc.shop_name }}</h1>
   <p><strong>Airport:</strong> {{ doc.airport }}</p>
-  <p><strong>Status:</strong> {{ doc.status }}</p>
   <p><strong>Area:</strong> {{ doc.shop_size }} sq ft</p>
   <p><strong>Monthly Rent:</strong> ₹{{ doc.monthly_rent }}</p>
 
 
   {% if doc.status == 'Available' %}
-  <p><strong>Status:</strong> {{ doc.status }}</p>
+    <p><strong>Status:</strong> {{ doc.status }}</p>
+    <p>
+      <a class="button button-success" href="/shop-lead/new?airport={{doc.airport}}&shop_name=shp-{{ doc.shop_name }}">Interested? Get in touch</a>
+    </p>
+
+  {% else %}
+
+    <p><strong>Status:</strong> {{ doc.status }}</p>
+    <p class="text-muted">This shop is currently not available for rent.</p>
+    
   {% endif %}
-  <p>
-    <a class="button button-success" href="/shop-lead/new">Interested? Get in touch</a>
-  </p>
+
+
 
 {% endblock %}

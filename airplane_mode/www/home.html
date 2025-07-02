@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Airport Mode - Home</title>
+</head>
+<body>
+  <h1>Available Flights</h1>
+  <ul>
+    {% for flight in flights %}
+      <li>
+        <a href="/{{ flight.route }}">
+        {{ flight.name }}: {{ flight.source_airport_code }} → {{ flight.destination_airport_code }} at {{ flight.date_of_departure }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h1>Wanna Rent a Shop at the Airport ??</h1>
+  <ul>
+    {% for shop in shops %}
+      <li>
+        <a href="/{{ shop.route }}">{{ shop.shop_name }}</a> — {{ shop.status }}
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

@@ -1,26 +1,24 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "autoname": "format: shp-{shop_name}",
  "creation": "2025-06-18 11:36:18.778722",
  "doctype": "DocType",
+ "document_type": "Other",
  "engine": "InnoDB",
  "field_order": [
   "shop_name",
   "shop_number",
   "shop_size",
-  "airport",
-  "monthly_rent",
-  "route",
   "is_published",
+  "route",
   "column_break_rxgb",
-  "tenant_name",
-  "tenant_contact_email",
-  "lease_start_date",
-  "lease_expiry_date",
+  "airport",
   "status",
   "shop_type",
-  "amended_from"
+  "amended_from",
+  "monthly_rent"
  ],
  "fields": [
   {
@@ -47,35 +45,8 @@
    "label": "Shop Number"
   },
   {
-   "fieldname": "monthly_rent",
-   "fieldtype": "Currency",
-   "label": "Monthly Rent",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "tenant_name",
-   "fieldtype": "Data",
-   "label": "Tenant Name",
-   "reqd": 1
-  },
-  {
    "fieldname": "column_break_rxgb",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "tenant_contact_email",
-   "fieldtype": "Data",
-   "label": "Tenant Contact Email"
-  },
-  {
-   "fieldname": "lease_start_date",
-   "fieldtype": "Date",
-   "label": "Lease Start Date"
-  },
-  {
-   "fieldname": "lease_expiry_date",
-   "fieldtype": "Date",
-   "label": "Lease Expiry Date"
   },
   {
    "fieldname": "airport",
@@ -87,7 +58,8 @@
    "fieldname": "shop_size",
    "fieldtype": "Float",
    "label": "Shop Size (Area in sq ft)",
-   "non_negative": 1
+   "non_negative": 1,
+   "reqd": 1
   },
   {
    "fieldname": "status",
@@ -110,6 +82,11 @@
    "fieldtype": "Link",
    "label": "Shop Type",
    "options": "Shop Type"
+  },
+  {
+   "fieldname": "monthly_rent",
+   "fieldtype": "Currency",
+   "label": "Monthly Rent"
   }
  ],
  "grid_page_length": 50,
@@ -117,7 +94,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "is_published",
  "links": [],
- "modified": "2025-06-19 14:42:05.273711",
+ "modified": "2025-06-27 16:55:34.191049",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Airport Shop",

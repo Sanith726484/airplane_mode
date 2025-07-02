@@ -9,4 +9,6 @@ class AirportShop(WebsiteGenerator):
         if not self.monthly_rent:
             settings = frappe.get_single("Airport Shop Settings")
             self.monthly_rent = settings.default_monthly_rent or 0
-		
+
+        if not self.route:
+            self.route = f"shops/{self.shop_name.strip().lower().replace(' ', '-')}"

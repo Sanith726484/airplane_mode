@@ -4,10 +4,38 @@
 			{{ (doc.title or doc.name) |e }}
 		</h5>
 	</a>
-	<span>
-		{{ doc.airport |e }}
-	</span>
+
+	{% if doc.status == "Available" %}
+
+		<h6 class="text-green">
+			{{ doc.status }} 
+		</h6>
+
+		{% if doc.airport %}
+			<span>
+				{{ doc.airport |e }}
+			</span>
+		{% endif %}
+
+	{% else %}
+
+		<h6 class="text-red">
+			{{ doc.status }}
+		</h6>
+		
+	{% endif %}
 	
 	<p class="text-muted">{{ doc.shop_size }} sq ft. - Rs. {{ doc.monthly_rent }}</p>
 </div>
-<!-- this is a sample default list template -->
+
+
+<style>
+	.text-green {
+		color: green;
+	}
+
+	.text-red {
+		color: red;
+	}
+
+</style>

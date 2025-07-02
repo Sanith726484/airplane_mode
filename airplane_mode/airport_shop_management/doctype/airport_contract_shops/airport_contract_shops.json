@@ -1,0 +1,80 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "autoincrement",
+ "creation": "2025-06-27 14:31:39.816160",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "shop",
+  "monthly_rent",
+  "area_sq_ft",
+  "airport",
+  "start_date",
+  "end_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "shop",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Shop",
+   "options": "Airport Shop",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "shop.monthly_rent",
+   "fieldname": "monthly_rent",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Monthly Rent",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "shop.shop_size",
+   "fieldname": "area_sq_ft",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Area (Sq. Ft)",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fetch_from": "shop.airport",
+   "fieldname": "airport",
+   "fieldtype": "Data",
+   "label": "Airport",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-30 15:13:58.618241",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Airport Contract Shops",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

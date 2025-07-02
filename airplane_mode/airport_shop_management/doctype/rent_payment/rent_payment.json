@@ -1,17 +1,21 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format: RP-{contract}-{MM}-{####}",
  "creation": "2025-06-17 16:06:13.393407",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_tair",
   "amended_from",
+  "receipt_number",
+  "contract",
   "shop",
   "tenant_name",
   "month",
-  "amount_paid",
-  "payment_date"
+  "amount",
+  "payment_date",
+  "payment_status"
  ],
  "fields": [
   {
@@ -32,34 +36,60 @@
    "fieldname": "shop",
    "fieldtype": "Link",
    "label": "Shop",
-   "options": "Airport Shop"
-  },
-  {
-   "fetch_from": "shop.tenant_name",
-   "fieldname": "tenant_name",
-   "fieldtype": "Link",
-   "label": "Tenant Name",
-   "options": "Airport Shop"
-  },
-  {
-   "fieldname": "month",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Month",
-   "options": "Jan\nFeb\nMar\nApr\nMay\nJun\nJuly\nAug\nSep\nOct\nNov\nDec",
+   "options": "Airport Shop",
    "reqd": 1
   },
   {
-   "fieldname": "amount_paid",
-   "fieldtype": "Currency",
-   "label": "Amount Paid",
-   "non_negative": 1,
+   "fetch_from": "contract.tenant_name",
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "label": "Tenant Name",
+   "options": "Airport Shop",
+   "reqd": 1
+  },
+  {
+   "fieldname": "month",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Month",
    "reqd": 1
   },
   {
    "fieldname": "payment_date",
    "fieldtype": "Date",
-   "label": "Payment Date",
+   "label": "Payment Date"
+  },
+  {
+   "fieldname": "contract",
+   "fieldtype": "Link",
+   "label": "Contract",
+   "options": "Airport Shop Contract",
+   "reqd": 1
+  },
+  {
+   "fieldname": "receipt_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Receipt Number"
+  },
+  {
+   "fetch_from": "contract.total_monthly_rent",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Payment Status",
+   "options": "Paid\nPending",
    "reqd": 1
   }
  ],
@@ -67,10 +97,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-06-17 16:26:29.988187",
+ "modified": "2025-06-30 17:47:53.419527",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Rent Payment",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

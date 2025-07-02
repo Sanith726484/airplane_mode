@@ -242,7 +242,9 @@ fixtures = ["Shop Type"]
 
 scheduler_events = {
     "monthly": [
-        "airplane_mode.rent.send_rent_reminders"
+        "airplane_mode.rent_reminder.send_rent_due_reminders",
+        "airplane_mode.rent_payment.create_monthly_rent_payments"
+
     ]
 }
 

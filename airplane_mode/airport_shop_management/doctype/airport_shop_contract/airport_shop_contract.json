@@ -1,0 +1,113 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format: CONTRACT-{####}",
+ "creation": "2025-06-27 14:27:36.760180",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tenant_name",
+  "column_break_miii",
+  "tenant_email",
+  "section_break_wjmn",
+  "shops",
+  "total_monthly_rent",
+  "section_break_slmo",
+  "contract_signature",
+  "column_break_pnlj",
+  "tenant_signature",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tenant Name",
+   "options": "Tenant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tenant_email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tenant Email",
+   "options": "Tenant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_monthly_rent",
+   "fieldtype": "Currency",
+   "label": "Total Monthly Rent"
+  },
+  {
+   "fieldname": "shops",
+   "fieldtype": "Table",
+   "options": "Airport Contract Shops"
+  },
+  {
+   "fieldname": "column_break_miii",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_wjmn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_slmo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "contract_signature",
+   "fieldtype": "Signature",
+   "label": "Contract Signature"
+  },
+  {
+   "fieldname": "column_break_pnlj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tenant_signature",
+   "fieldtype": "Signature",
+   "label": "Tenant Signature"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Airport Shop Contract",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-06-30 18:00:32.272608",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Airport Shop Contract",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

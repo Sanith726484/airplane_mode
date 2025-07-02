@@ -1,0 +1,17 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<h2>My Airplanes</h2>
+
+{% if airplanes %}
+  <ul>
+    {% for airplane in airplanes %}
+      <li>
+        {{ airplane.name }} - {{ airplane.model }}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No Airplanes found.</p>
+{% endif %}
+{% endblock %}

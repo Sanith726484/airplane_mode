@@ -40,14 +40,13 @@ class AirplaneTicket(WebsiteGenerator):
 		flight_price = self.flight_price or 0
 		total_add_ons = sum((row.amount or 0) for row in self.add_ons)
 		print(f"Flight Price: {flight_price}, Total Add-Ons: {total_add_ons}")
-		self.total_amount = flight_price + total_add_ons
+		self.total_amount = float(flight_price) + float(total_add_ons)
 
 	def check_flight_capacity(self):
 		if not self.flight:
 			return
 
 		try:
-			# Get linked flight and airplane
 			flight_doc = frappe.get_doc("Airplane Flight", self.flight)
 
 			if not flight_doc.airplane:
@@ -55,10 +54,8 @@ class AirplaneTicket(WebsiteGenerator):
 
 			capacity = frappe.db.get_value("Airplane", flight_doc.airplane, "capacity") or 0
 
-			# Count existing tickets for this flight
 			ticket_count = frappe.db.count("Airplane Ticket", {"flight": self.flight})
 
-			# If ticket count exceeds or equals capacity, raise validation error
 			if ticket_count >= capacity:
 				raise ValidationError(
 					_("Cannot create ticket. Flight '{0}' has reached its full capacity of {1} seats.")
@@ -66,5 +63,4 @@ class AirplaneTicket(WebsiteGenerator):
 				)
 
 		except ValidationError as exc:
-			# Raise custom error message using frappe.throw()
 			frappe.throw(str(exc), frappe.ValidationError)
