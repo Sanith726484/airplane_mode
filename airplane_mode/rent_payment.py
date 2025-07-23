@@ -1,7 +1,6 @@
 import frappe
-from frappe.utils import nowdate, get_first_day, getdate
+from frappe.utils import get_first_day, getdate
 from datetime import timedelta
-import time
 
 def create_monthly_rent_payments():
     today = getdate() + timedelta(days=1)
@@ -11,7 +10,7 @@ def create_monthly_rent_payments():
 
     for contract in contracts:
         contract_doc = frappe.get_doc("Airport Shop Contract", contract.name)
-        print(f"\n📄 Processing Contract: {contract_doc.name}")
+        # print(f"\n📄 Processing Contract: {contract_doc.name}")
 
         for shop_entry in contract_doc.shops:
             shop = shop_entry.shop
@@ -19,7 +18,7 @@ def create_monthly_rent_payments():
             rent_amount = shop_entry.monthly_rent
 
             if getdate(shop_entry.end_date) < today:
-                print(f"⏭️  Skipping expired lease for shop: {shop}")
+                # print(f"⏭️  Skipping expired lease for shop: {shop}")
                 continue
 
             existing = frappe.db.exists(
@@ -36,11 +35,10 @@ def create_monthly_rent_payments():
                 print(f"✅ Already exists for shop {shop}, month {month_start}")
                 continue
 
-            # Build custom name (e.g., RP-CONTRACT-SHOP-2025-07)
             month_str = month_start.strftime("%Y-%m")
             custom_name = f"RP-{contract_doc.name}-{shop}-{month_str}"
 
-            print(f"🆕 Creating Rent Payment with name: {custom_name}")
+            # print(f"🆕 Creating Rent Payment with name: {custom_name}")
 
             for attempt in range(3):
                 try:

@@ -5,6 +5,9 @@ import frappe
 from frappe.website.website_generator import WebsiteGenerator
 
 class AirportShop(WebsiteGenerator):
+    def on_submit(self):
+        self.is_published = 1
+
     def validate(self):
         if not self.monthly_rent:
             settings = frappe.get_single("Airport Shop Settings")

@@ -6,3 +6,5 @@
 # Patches added in this section will be executed after doctypes are migrated
 
 airplane_mode.patches.populate_seats
+airplane_mode.patches.mark_shop_occupied
+airplane_mode.patches.publish_flights

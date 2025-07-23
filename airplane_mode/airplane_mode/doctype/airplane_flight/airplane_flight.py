@@ -9,6 +9,7 @@ from frappe import enqueue
 class AirplaneFlight(WebsiteGenerator):
 	def on_submit(self):
 		self.status = "Completed"
+		self.is_published = 1
 
 	def on_update(self):
 		if self.has_value_changed("gate_number"):

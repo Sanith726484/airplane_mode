@@ -244,17 +244,9 @@ scheduler_events = {
     "monthly": [
         "airplane_mode.rent_reminder.send_rent_due_reminders",
         "airplane_mode.rent_payment.create_monthly_rent_payments"
-
+    ],
+    "daily": [
+        "airplane_mode.lease_expiry_check.update_expired_shops_individually",
+        "airplane_mode.lease_reminder.send_shop_lease_expiry_reminders"
     ]
 }
-
-website_user_home_page = "airplane_mode.www.user_dashboard"
-
-portal_menu_items = [
-    {
-        "title": "My Orders",
-        "route": "/my-orders",
-        "reference_doctype": "Sales Order",
-        "role": "Customer"
-    }
-]
